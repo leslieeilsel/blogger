@@ -1,0 +1,58 @@
+1503417149a:1:{s:8:"home.htm";a:10:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:876:"title = "Welcome"
+url = "/"
+layout = "default"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = "10"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+
+[resources]
+less[] = "pages/home.less"
+js[] = "controls/auto-pager.js"
+js[] = "../vendor/isotope/imagesloaded.js"
+js[] = "../vendor/isotope/isotope.js"
+js[] = "pages/home.js"
+==
+<?
+public function onPagePosts()
+{
+    $this->blogPosts->setProperty('pageNumber', post('page'));
+    $this->pageCycle();
+}
+?>
+==
+<div
+    id="homePosts"
+    class="post-list home-posts">
+    {% partial 'home/posts' %}
+</div>
+<div
+    class="text-center"
+    data-control="auto-pager"
+    data-request="onPagePosts"
+    data-request-update="'home/posts': '@#homePosts'"
+    data-current-page="1"
+    data-last-page="{{ posts.lastPage }}">
+    <a class="text-muted oc-loading">Fetching posts..</a>
+</div>
+";s:5:"mtime";i:1501639039;s:6:"markup";s:373:"<div
+    id="homePosts"
+    class="post-list home-posts">
+    {% partial 'home/posts' %}
+</div>
+<div
+    class="text-center"
+    data-control="auto-pager"
+    data-request="onPagePosts"
+    data-request-update="'home/posts': '@#homePosts'"
+    data-current-page="1"
+    data-last-page="{{ posts.lastPage }}">
+    <a class="text-muted oc-loading">Fetching posts..</a>
+</div>";s:4:"code";s:120:"public function onPagePosts()
+{
+    $this->blogPosts->setProperty('pageNumber', post('page'));
+    $this->pageCycle();
+}";s:5:"title";s:7:"Welcome";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"blogPosts";a:5:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:2:"10";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:13:"blog/category";s:8:"postPage";s:9:"blog/post";}s:9:"resources";a:2:{s:4:"less";a:1:{i:0;s:15:"pages/home.less";}s:2:"js";a:4:{i:0;s:22:"controls/auto-pager.js";i:1;s:33:"../vendor/isotope/imagesloaded.js";i:2;s:28:"../vendor/isotope/isotope.js";i:3;s:13:"pages/home.js";}}}}

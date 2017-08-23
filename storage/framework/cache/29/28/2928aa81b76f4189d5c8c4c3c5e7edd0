@@ -1,0 +1,102 @@
+1503417543a:1:{s:16:"site/sidebar.htm";a:7:{s:8:"fileName";s:16:"site/sidebar.htm";s:7:"content";s:2024:"[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 5
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 1
+categoryPage = "blog/category"
+==
+<?php
+function onStart()
+{
+    $this['base_url'] = $_SERVER ['SERVER_NAME'];
+}
+?>
+==
+<div class="sidebar-close visible-sm visible-xs">
+    <a href="javascript:;" onclick="toggleSidebar()" class="close">&times;</a>
+</div>
+
+<div class="sidebar-segment hidden-sm hidden-xs">
+    <h1 class="site-name">
+        <a href="{{ 'home'|page }}">{{ this.theme.site_name }}</a>
+    </h1>
+    <p class="site-motto">
+        {{ this.theme.site_motto }}
+    </p>
+</div>
+
+<div class="sidebar-segment">
+    <h2 class="segment-title">最近的帖子</h2>
+    <ul class="segment-list">
+        {% for post in blogPosts.posts %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="sidebar-segment">
+    <h2 class="segment-title">标签</h2>
+    <ul class="segment-list">
+            {% component 'blogCategories' %}
+        <!-- {% for category in blogCategories.categories %}
+            <li><a href="{{ category.url }}">{{ category.title }}</a></li>
+        {% endfor %} -->
+    </ul>
+</div>
+
+<div class="sidebar-segment">
+    <h2 class="segment-title">Follow me</h2>
+    <ul class="segment-list">
+        <li><img src="/themes/responsiv-clean/assets/images/sina.png" alt="" width="20px">&nbsp;&nbsp;<a href="javascript:volid(0)" target="_blank">微博 : @leslie-eilsel</a></li>
+        <li><img src="/themes/responsiv-clean/assets/images/wechat.svg" alt="" width="16px">&nbsp;&nbsp;<a href="javascript:volid(0)" target="_blank">微信 : liuxing729320</a></li>
+        <li><img src="/themes/responsiv-clean/assets/images/gmail.svg" alt="" width="15px">&nbsp;&nbsp;<a href="javascript:volid(0)">Email : leslieliuxing@gmail.com</a></li>
+    </ul>
+</div>";s:5:"mtime";i:1503416908;s:6:"markup";s:1653:"<div class="sidebar-close visible-sm visible-xs">
+    <a href="javascript:;" onclick="toggleSidebar()" class="close">&times;</a>
+</div>
+
+<div class="sidebar-segment hidden-sm hidden-xs">
+    <h1 class="site-name">
+        <a href="{{ 'home'|page }}">{{ this.theme.site_name }}</a>
+    </h1>
+    <p class="site-motto">
+        {{ this.theme.site_motto }}
+    </p>
+</div>
+
+<div class="sidebar-segment">
+    <h2 class="segment-title">最近的帖子</h2>
+    <ul class="segment-list">
+        {% for post in blogPosts.posts %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="sidebar-segment">
+    <h2 class="segment-title">标签</h2>
+    <ul class="segment-list">
+            {% component 'blogCategories' %}
+        <!-- {% for category in blogCategories.categories %}
+            <li><a href="{{ category.url }}">{{ category.title }}</a></li>
+        {% endfor %} -->
+    </ul>
+</div>
+
+<div class="sidebar-segment">
+    <h2 class="segment-title">Follow me</h2>
+    <ul class="segment-list">
+        <li><img src="/themes/responsiv-clean/assets/images/sina.png" alt="" width="20px">&nbsp;&nbsp;<a href="javascript:volid(0)" target="_blank">微博 : @leslie-eilsel</a></li>
+        <li><img src="/themes/responsiv-clean/assets/images/wechat.svg" alt="" width="16px">&nbsp;&nbsp;<a href="javascript:volid(0)" target="_blank">微信 : liuxing729320</a></li>
+        <li><img src="/themes/responsiv-clean/assets/images/gmail.svg" alt="" width="15px">&nbsp;&nbsp;<a href="javascript:volid(0)">Email : leslieliuxing@gmail.com</a></li>
+    </ul>
+</div>";s:4:"code";s:75:"function onStart()
+{
+    $this['base_url'] = $_SERVER ['SERVER_NAME'];
+}";s:9:"blogPosts";a:6:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:1:"5";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:13:"blog/category";s:8:"postPage";s:9:"blog/post";}s:14:"blogCategories";a:3:{s:4:"slug";s:11:"{{ :slug }}";s:12:"displayEmpty";s:1:"1";s:12:"categoryPage";s:13:"blog/category";}}}

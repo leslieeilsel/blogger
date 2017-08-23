@@ -1,0 +1,22 @@
+.home-posts {
+  margin: 0 6%;
+}
+.home-posts:before,
+.home-posts:after {
+  content: " ";
+  display: table;
+}
+.home-posts:after {
+  clear: both;
+}
+.home-posts .home-post {
+  margin: 0 2%;
+  width: 46%;
+  float: left;
+}
+@media (max-width: 767px) {
+  .home-posts .home-post {
+    width: 100%;
+    margin: 0;
+  }
+}
