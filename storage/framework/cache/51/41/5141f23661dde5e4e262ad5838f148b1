@@ -1,9 +1,0 @@
-1503417149a:1:{s:14:"home/posts.htm";a:5:{s:8:"fileName";s:14:"home/posts.htm";s:7:"content";s:119:"{% for post in posts %}
-    <div class="home-post">
-        {% partial 'blog/post' post=post %}
-    </div>
-{% endfor %}";s:5:"mtime";i:1501639039;s:6:"markup";s:119:"{% for post in posts %}
-    <div class="home-post">
-        {% partial 'blog/post' post=post %}
-    </div>
-{% endfor %}";s:4:"code";N;}}
