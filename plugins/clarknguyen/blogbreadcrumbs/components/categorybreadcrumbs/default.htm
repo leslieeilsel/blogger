@@ -1,0 +1,11 @@
+<div class="blog_category_breadcrumbs">
+{% for breadcrumb in breadCrumbs %}
+	{% if breadcrumb.separator %}
+	<span class="breadcrumb_separator">{{ breadcrumb.separator }}</span>
+	{% elseif breadcrumb.link == '#' %}
+	<span class="breadcrumb_currentcategory">{{ breadcrumb.name }}</span>
+	{% else %}
+	<a href="{{ breadcrumb.link }}">{{ breadcrumb.name }}</a>
+	{% endif %}
+{% endfor %}
+</div>

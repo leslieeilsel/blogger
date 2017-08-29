@@ -1,0 +1,79 @@
+title = "Post by Tags"
+url = "/tag/:tag"
+layout = "default"
+description = "Posts by Tags"
+is_hidden = 0
+
+[blogTagSearch]
+tag = "{{ :tag }}"
+page = "{{ :page }}"
+resultsPerPage = 10
+==
+<!-- Page Title
+		============================================= -->
+<section id="page-title">
+
+    <div class="container clearfix">
+        <h1>Blog</h1>
+        <span>Search by tag <strong>{{ blogTagSearch.tag.name }}</strong></span>
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li class="active">Blog</li>
+        </ol>
+    </div>
+
+</section><!-- #page-title end -->
+
+<div class="content-wrap">
+    
+
+<div class="container clearfix">
+
+    <!-- Post Content
+    ============================================= -->
+    <div class="postcontent nobottommargin clearfix">
+        <!-- Posts
+						============================================= -->
+        <div id="posts" class="small-thumbs">
+            {% for post in blogTagSearch.posts %}
+            <div class="entry clearfix">
+                <div class="entry-image">
+                    {% if post.featured_images.count %}
+                    {% for image in post.featured_images %}
+                    <a href="/{{ post.slug }}" data-lightbox="image"><img class="image_fade" data-src="{{ image.filename }}" src="{{ image.path }}" alt="{{ image.description }}"></a>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="entry-c">
+                    <div class="entry-title">
+                        <h2><a href="/{{ post.slug }}">{{ post.title }}</a></h2>
+                    </div>
+                    <ul class="entry-meta clearfix">
+                        <li><i class="icon-calendar3"></i> {{ post.published_at | date('M-d-y') }}</li>
+                        <li><a href="{{ post.user.url }}"><i class="icon-user"></i> {{ post.user.getFullNameAttribute }}</a></li>
+                        <li><i class="icon-folder-open"></i> {% if post.categories.count %} in
+                            {% for category in post.categories %}
+                            <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                            {% endfor %}
+                            {% endif %}</li>
+                        <li><a href="/{{ post.slug }}"><i class="icon-camera-retro"></i></a></li>
+                    </ul>
+                    <div class="entry-content">
+                        <p>{{ post.summary }}.</p>
+                        <a href="/{{ post.slug }}"class="more-link">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+        {% partial "pagination"%}
+
+    </div>
+
+    {% partial "sidebar" %}
+    
+</div>
+
+</div>

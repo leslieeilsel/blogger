@@ -1,0 +1,125 @@
+description = "Sidebar"
+
+[viewBag]
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 1
+categoryPage = "blog/categories"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 3
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/categories"
+postPage = "blog/post"
+
+[blogTags]
+hideOrphans = 1
+results = 10
+orderBy = "name"
+direction = "desc"
+
+[tweetBoard]
+count = 10
+==
+<!-- Sidebar
+					============================================= -->
+    <div class="sidebar nobottommargin col_last clearfix">
+    <div class="sidebar-widgets-wrap">
+
+    <div class="widget widget_links clearfix">
+        <h4>Categories</h4>
+        
+            <ul>
+              {% for category in categories %}
+                  <li><a href="{{ category.url }}" rel="nofollow">{{ category.name }}</a></li>
+              {% endfor %}
+            </ul>
+        
+    </div>
+    
+    <div class="widget clearfix">
+
+        <div class="tabs nobottommargin clearfix" id="sidebar-tabs">
+
+            <ul class="tab-nav clearfix">
+                <li><a href="#tabs-1">Popular</a></li>
+                <li><a href="#tabs-2">Recent</a></li>
+            </ul>
+
+            <div class="tab-container">
+
+                <div class="tab-content clearfix" id="tabs-1">
+                    <div id="popular-post-list-sidebar">
+                        {% for post in posts %}
+                        <div class="spost clearfix">
+                            <div class="entry-image">
+                                {% if post.featured_images.count %}
+                    {% for image in post.featured_images %}
+                    <a href="{{ post.url }}"><img data-src="{{ image.filename }}" src="{{ image.path }}" alt="{{ image.description }}"></a>
+                    {% endfor %}
+                    {% endif %}
+                            </div>
+                            <div class="entry-c">
+                                <div class="entry-title">
+                                    <h4><a href="{{ post.url }}" rel="nofollow">{{ post.title }}</a></h4>
+                                </div>
+                                <ul class="entry-meta">
+                                    <li><i class="icon-comments-alt"></i> 35 Comments</li>
+                                </ul>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="tab-content clearfix" id="tabs-2">
+                    <div id="recent-post-list-sidebar">
+
+                        {% for post in posts %}
+                        <div class="spost clearfix">
+                            <div class="entry-image">
+                                {% if post.featured_images.count %}
+                    {% for image in post.featured_images %}
+                    <a href="{{ post.url }}"><img data-src="{{ image.filename }}" src="{{ image.path }}" alt="{{ image.description }}"></a>
+                    {% endfor %}
+                    {% endif %}
+                            </div>
+                            <div class="entry-c">
+                                <div class="entry-title">
+                                    <h4><a href="{{ post.url }}" rel="nofollow">{{ post.title }}</a></h4>
+                                </div>
+                                <ul class="entry-meta">
+                                    <li> {{ post.published_at | date('M-d-y')}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="widget clearfix">
+
+        <h4>Tag Cloud</h4>
+        <div class="tagcloud">
+            {% if blogTags %}
+                        {% for tag in blogTags.tags %}
+                        <a href="/tag/{{ tag.name }}" rel="nofollow">{{ tag.name }}</a>
+                        {% endfor %}
+                        {% endif %}
+        </div>
+
+    </div>
+    <div class="widget clearfix">
+        {% component 'tweetBoard' %}
+    </div>
+    </div>
+
+    </div><!-- .sidebar end -->

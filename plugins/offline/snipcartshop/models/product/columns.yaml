@@ -1,0 +1,37 @@
+columns:
+    user_defined_id:
+        label: 'offline.snipcartshop::lang.plugin.product.user_defined_id'
+        type: text
+        searchable: true
+        sortable: true
+    name:
+        label: 'offline.snipcartshop::lang.plugin.product.name'
+        type: text
+        searchable: true
+        sortable: true
+    price:
+        label: 'offline.snipcartshop::lang.plugin.product.price'
+        type: partial
+        path: $/offline/snipcartshop/models/product/_price.htm
+        searchable: true
+        sortable: true
+    published:
+        label: 'offline.snipcartshop::lang.plugin.product.published'
+        type: partial
+        path: $/offline/snipcartshop/models/product/_published.htm
+        sortable: true
+    taxable:
+        label: 'offline.snipcartshop::lang.plugin.product.taxable'
+        type: partial
+        path: $/offline/snipcartshop/models/product/_taxable.htm
+        sortable: true
+    categories:
+        label: 'offline.snipcartshop::lang.plugin.common.categories'
+        relation: categories
+        select: name
+        sortable: true
+        searchable: true
+    stock:
+        label: 'offline.snipcartshop::lang.plugin.product.stock'
+        type: number
+        invisible: true

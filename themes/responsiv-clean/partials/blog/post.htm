@@ -1,3 +1,17 @@
+[ScrollTop]
+speedScrollTopLynx = 300
+sizeScrollLynx = 50
+positionScrollLynx = "bottomright"
+UnitScrollLynx = "%"
+horizontalUnitsScrollLynx = 2
+verticalUnitsScrollLynx = 7
+arrowColorScrollLynx = "#000"
+arrowHoverColorScrollLynx = "#2E2E2E"
+backgroundColorScrollLynx = "#FFF"
+backgroundHoverColorScrollLynx = "#E6E6E6"
+
+[viewBag]
+==
 {% set image = post.featured_images.first %}
 <article>
 
@@ -28,3 +42,4 @@
         {% endif %}
     </footer>
 </article>
+{% component 'ScrollTop' %}

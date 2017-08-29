@@ -1,0 +1,91 @@
+1.0.1:
+    - 'Initial release.'
+    - builder_table_create_offline_snipcartshop_products.php
+    - builder_table_create_offline_snipcartshop_product_variants.php
+    - builder_table_create_offline_snipcartshop_product_custom_fields.php
+    - builder_table_create_offline_snipcartshop_product_custom_field_options.php
+    - builder_table_create_offline_snipcartshop_product_variant_custom_field_option.php
+    - builder_table_create_offline_snipcartshop_categories.php
+    - builder_table_create_offline_snipcartshop_category_product.php
+    - builder_table_create_offline_snipcartshop_orders.php
+    - builder_table_create_offline_snipcartshop_order_items.php
+    - builder_table_create_offline_snipcartshop_discounts.php
+1.0.2:
+    - 'Added support for product attributes, downloads and links // Optimized price validation'
+    - builder_table_update_offline_snipcartshop_products.php
+1.0.3:
+    - 'Added support for product accessories'
+    - builder_table_create_offline_snipcartshop_product_accessory.php
+1.0.4:
+    - 'Fixed incorrect database schema generation (thanks to abhi1693)'
+1.0.5:
+    - 'Enable support on Windows systems and make Rainlab.Translate dependency optional'
+1.0.6:
+    - 'Fixed issues with MySQL instances that run in strict mode'
+    - set_sort_order_defaults.php
+1.0.7:
+    - 'Prevent generation of empty sub-category lists'
+1.0.8:
+    - 'Fixed price handling with product variants and generation of category slugs'
+1.0.9:
+    - 'Use category slug in sub categories directly'
+1.0.10:
+    - 'Added missing categoryPage param'
+1.0.11:
+    - 'Added is_accessory_of relationship to articles'
+1.0.12:
+    - 'Added new Snipcart Webhook fields'
+1.0.13:
+    - 'Fixed generation of quantitiy attributes in product markup'
+1.0.14:
+    - 'Added workaround to make translation of product attributes work as expected'
+1.0.15:
+    - 'Added maximum number of usages field to discouts'
+1.0.16:
+    - 'Fixed invalid relationship column in products list'
+1.0.17:
+    - 'Prevent a bug with discounts where the trigger type gets ignored by Snipcart'
+1.0.18:
+    - 'Added option to display custom fields directly on the product page'
+1.0.19:
+    - 'Implemented category images'
+1.0.20:
+    - 'Added unique code field to better identify categories in frontend partials'
+    - builder_table_update_offline_snipcartshop_categories.php
+1.0.21:
+    - 'Added options for continue shopping button and split first and last name fields'
+1.0.22:
+    - 'Fixed backend search and made components work without categories'
+1.0.23:
+    - 'Calculating new price immediately after changing custom fields on the product page'
+1.0.24:
+    - 'Made order fields nullable'
+    - make_order_fields_nullable.php
+1.0.25:
+    - 'Fixed "show all products" option on products component'
+1.0.26:
+    - 'Made order items fields nullable'
+    - make_order_items_fields_nullable.php
+1.0.27:
+    - 'Fixed custom attribute dropdowns when using SQLite'
+1.0.28:
+    - 'Added category filter to products list'
+1.0.29:
+    - 'Moved frontend price calculation into a separate partial'
+1.0.30:
+    - 'Tracking used discount codes for orders'
+    - builder_table_update_offline_snipcartshop_orders.php
+1.0.31:
+    - 'Implemented new Snipcart Webhook fields'
+1.0.32:
+    - 'Added orders export functionality'
+1.0.33:
+    - 'Implemented custom currency formats'
+1.0.34:
+    - 'Added dependency on Rainlab.Translate'
+1.0.35:
+    - 'Added support for new October Build 420 on Laravel 5.5'
+1.0.36:
+    - 'Fixed compatibility with new Snipcart Webhook fields'
+1.0.37:
+    - 'Fixed bugs when receiving Snipcart webhooks'

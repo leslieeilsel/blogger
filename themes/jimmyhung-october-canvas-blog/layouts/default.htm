@@ -1,0 +1,82 @@
+description = "Default Layout"
+==
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+    {% styles %}
+        <link href="//fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+        <link href="{{ [
+                'assets/css/bootstrap.css',
+                'assets/style.css',
+                'assets/css/dark.css',
+                'assets/css/swiper.css',
+                'assets/css/font-icons.css',
+                'assets/css/animate.css',
+                'assets/css/magnific-popup.css',
+                'assets/css/responsive.css'
+            ]|theme }}" rel="stylesheet">
+            
+            <link rel="icon" href="{{ "assets/images/favicon.ico" | theme}}" type="image/png" sizes="16x16">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+    <title>Cashing More - {{ this.page.title }}</title>
+    <body class="stretched no-transition">
+        <!-- The Main Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="sticky-style-2">
+
+			{% partial "header" %}
+
+		</header>
+
+        
+		<!-- Site Content
+		============================================= -->
+		<section id="content">
+					{% page %}
+		</section>
+
+		<!-- Footer
+		============================================= -->
+		<footer id="footer" class="dark">
+
+            <div class="container">
+            {% partial "footer" %}
+            </div>
+            
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					{% partial "copyrights" %}
+
+				</div>
+
+			</div>
+
+		</footer>
+
+	</div>
+	
+	<!-- Scripts -->
+        <script src="{{ [
+            'assets/js/jquery.js',
+            'assets/js/plugins.js',
+            'assets/js/functions.js'
+        ]|theme }}"></script>
+        {% framework extras %}
+        {% scripts %}
+	
+    </body>
+</html>

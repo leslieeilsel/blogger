@@ -1,0 +1,8 @@
+name: 'October Canvas Blog'
+description: 'Canvas is a Powerful, Responsive & Raw Multi-Purpose Multi-Page & One-Page HTML5 Template. I have just bought it on Themeforest. This is OctoberCMS theme that I have convert from that template. I decided to distribute it free for OctoberCMS community. Contact with me through email: jimmyhien007@gmail.com if you want to convert any template to OctoberCMS theme.'
+author: 'Jimmy Hung'
+homepage: 'https://themeforest.net/item/canvas-the-multipurpose-html5-template/9228123?ref=jimmyhien'
+code: october-canvas-blog
+require:
+    - RainLab.Blog
+    - Bedard.Blogtags

@@ -1,0 +1,20 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: vojtasvoboda.brands::lang.labels.category.name
+        searchable: true
+        sortable: true
+    slug:
+        label: vojtasvoboda.brands::lang.labels.category.slug
+        searchable: true
+        sortable: true
+    sort_order:
+        label: vojtasvoboda.brands::lang.labels.category.sort_order
+        sortable: true
+    enabled:
+        label: vojtasvoboda.brands::lang.labels.brand.enabled
+        type: switch
+        sortable: true

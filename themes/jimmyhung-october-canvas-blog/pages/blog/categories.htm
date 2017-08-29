@@ -1,0 +1,92 @@
+title = "Blog Categories"
+url = "/category/:slug/:page?"
+layout = "default"
+description = "Categories Blog Posts"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 5
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/categories"
+postPage = "blog/post"
+==
+<?php
+function onEnd()
+{
+    // Optional - set the page title to the category name
+    if ($this->category)
+$this->page->title = $this->category->name;
+}
+?>
+==
+<!-- Page Title
+		============================================= -->
+<section id="page-title">
+
+    <div class="container clearfix">
+        <h1>Blog</h1>
+        <span>{{ category.name }}</span>
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li class="active">Blog</li>
+        </ol>
+    </div>
+
+</section><!-- #page-title end -->
+
+<div class="content-wrap">
+    
+
+<div class="container clearfix">
+
+    <!-- Post Content
+    ============================================= -->
+    <div class="postcontent nobottommargin clearfix">
+        <!-- Posts
+						============================================= -->
+        <div id="posts" class="small-thumbs">
+            {% for post in posts %}
+            <div class="entry clearfix">
+                <div class="entry-image">
+                    {% if post.featured_images.count %}
+                    {% for image in post.featured_images %}
+                    <a href="{{ post.url }}" data-lightbox="image"><img class="image_fade" data-src="{{ image.filename }}" src="{{ image.path }}" alt="{{ image.description }}"></a>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="entry-c">
+                    <div class="entry-title">
+                        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                    </div>
+                    <ul class="entry-meta clearfix">
+                        <li><i class="icon-calendar3"></i> {{ post.published_at | date('M-d-y') }}</li>
+                        <li><a href="{{ post.user.url }}"><i class="icon-user"></i> {{ post.user.getFullNameAttribute }}</a></li>
+                        <li><i class="icon-folder-open"></i> {% if post.categories.count %} in
+                            {% for category in post.categories %}
+                            <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                            {% endfor %}
+                            {% endif %}</li>
+                        <li><a href="{{ post.url }}"><i class="icon-camera-retro"></i></a></li>
+                    </ul>
+                    <div class="entry-content">
+                        <p>{{ post.summary }}.</p>
+                        <a href="{{ post.url }}"class="more-link">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+        {% partial "pagination"%}
+
+    </div>
+
+    {% partial "sidebar" %}
+    
+</div>
+
+</div>

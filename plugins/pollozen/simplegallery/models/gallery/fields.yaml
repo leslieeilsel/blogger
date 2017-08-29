@@ -1,0 +1,17 @@
+fields:
+    name:
+        span: auto
+        label: pollozen.simplegallery::lang.column.name
+        required: true
+    slug:
+        span: auto
+        label: Slug
+        preset: name
+        required: true
+    description:
+        span: full
+        label: pollozen.simplegallery::lang.column.description
+    images:
+      label: pollozen.simplegallery::lang.column.images
+      type: fileupload
+      mode: image

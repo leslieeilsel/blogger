@@ -1,0 +1,90 @@
+.product-detail .product
+    lost-utility clearfix
+    &__images
+        lost-column 2 / 5 2 80px
+        +below('m')
+            lost-column 1/1
+            margin-bottom 2em
+
+    &__information
+        lost-column 3 / 5 2 80px
+        +below('m')
+            lost-column 1/1
+
+    &__main-image
+        margin-bottom 3em
+        +below('m')
+            text-align center
+
+        img
+            max-width 100%
+
+    &__image-grid > .product-image
+        lost-column 1 / 5 5 10px
+        img
+            max-width 100%
+
+    &__name
+        font-weight 600
+        margin 0 0 .5em
+        line-height 1.2
+
+    &__description-short
+        color #888
+        line-height 1.2
+        margin 0 0 1em
+
+    &__price
+        font-size 1.4em
+        font-weight 600
+        color primary-color
+        margin-bottom .75em
+
+    &__add-to-cart button
+        color #fff
+        border 1px solid darken(ternary-color, 5)
+        box-shadow 0 2px 0 darken(ternary-color, 5)
+        padding .75em 5em .5em
+        border-radius 4px
+        line-height 1
+        background ternary-color
+        text-transform uppercase
+        font-weight 600
+        &:hover
+            background lighten(ternary-color, 5)
+        +below('xs')
+            width 100%
+
+    &__accessories
+        margin-top 2em
+        padding-top 2em
+        border-top 1px solid #eee
+
+    &__additional-data
+        margin 2em 0
+        lost-utility clearfix
+
+
+.product-info
+    lost-column 1/2
+    +below('m')
+        lost-column 1/1
+
+    &__item
+        margin-bottom .5em
+
+    &__title
+        margin 0
+        font-size 1em
+
+.accessories-grid
+    lost-utility clearfix
+    .accessory
+        lost-column 1/4
+        &__image
+            lost-align center
+            height 120px
+            overflow hidden
+            img
+                max-width 100%
+                max-height 100%

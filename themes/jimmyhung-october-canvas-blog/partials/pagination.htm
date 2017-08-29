@@ -1,0 +1,22 @@
+description = "Pagination"
+
+[viewBag]
+==
+
+{% if posts.lastPage > 1 %}
+
+    <ul class="pagination pull-right">
+        {% if posts.currentPage > 1 %}
+        <li class="previous"><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}"  class="fui-arrow-left">&larr; Prev</a></li>
+        {% endif %}
+        {% for page in 1..posts.lastPage %}
+        <li class="{{ posts.currentPage == page ? 'active' : null }}">
+            <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+        </li>
+        {% endfor %}
+
+        {% if posts.lastPage > posts.currentPage %}
+        <li class="next"><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}" class="fui-arrow-right">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}

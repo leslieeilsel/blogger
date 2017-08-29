@@ -1,0 +1,48 @@
+description = "Header Section"
+
+[viewBag]
+==
+<div class="container clearfix">
+
+				<!-- Logo
+				============================================= -->
+				<div id="logo" class="divcenter primary-menu">
+					<a href="/" class="standard-logo" data-dark-logo="{{ "assets/images/logo-dark.png"|theme }}"><img class="divcenter" src="{{ "assets/images/logo.png"|theme }}" alt="Canvas Logo"></a>
+					<a href="/" class="retina-logo" data-dark-logo="{{ "assets/images/logo-dark@2x.png"|theme }}"><img class="divcenter" src="{{ "assets/images/logo@2x.png"|theme }}" alt="Canvas Logo"></a>
+				</div><!-- #logo end -->
+
+			</div>
+
+			<div id="header-wrap">
+
+				<!-- Primary Navigation
+				============================================= -->
+				<nav id="primary-menu" class="style-2 center">
+
+					<div class="container clearfix">
+
+						<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+                        
+						<ul>
+							<li {% if this.page.url=="/" %} class="current" {% endif %}><a href="/"><div>Home</div></a>
+							<li {% if this.param.slug=="cashing-beginner" %} class="current" {% endif %}><a href="/category/cashing-beginner"><div>Cashing for Beginner</div></a>
+							<li {% if this.param.slug=="cashing-stories" %} class="current" {% endif %}><a href="/category/cashing-stories"><div>Cashing Stories</div></a>
+							<li {% if this.param.slug=="cashing-tips" %} class="current" {% endif %}><a href="/category/cashing-tips"><div>Cashing Tips</div></a>
+							<li {% if this.param.slug=="cashing-techniques" %} class="current" {% endif %}><a href="/category/cashing-techniques"><div>Cashing Techniques</div></a>
+							<li {% if this.param.slug=="cashing-networks" %} class="current" {% endif %}><a href="/category/cashing-networks"><div>Cashing Networks</div></a>
+						</ul>
+
+						<!-- Top Search
+						============================================= -->
+						<div id="top-search">
+							<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+							<form action="search.html" method="get">
+								<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+							</form>
+						</div><!-- #top-search end -->
+
+					</div>
+
+				</nav><!-- #primary-menu end -->
+
+			</div>

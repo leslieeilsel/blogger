@@ -1,0 +1,48 @@
+fields:
+    name:
+        label: 'offline.snipcartshop::lang.plugin.category.name'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    image:
+        label: 'offline.snipcartshop::lang.plugin.common.main_image'
+        oc.commentPosition: ''
+        mode: image
+        prompt: 'offline.snipcartshop::lang.plugin.common.select_image'
+        imageWidth: '120'
+        imageHeight: '120'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: right
+        type: fileupload
+    slug:
+        label: 'offline.snipcartshop::lang.plugin.common.slug'
+        oc.commentPosition: ''
+        span: left
+        preset:
+            field: name
+            type: slug
+        type: text
+    code:
+        label: 'offline.snipcartshop::lang.plugin.category.code'
+        comment: 'offline.snipcartshop::lang.plugin.category.code_comment'
+        oc.commentPosition: 'below'
+        span: left
+        type: text
+    meta_title:
+        label: 'offline.snipcartshop::lang.plugin.common.meta_title'
+        oc.commentPosition: ''
+        span: left
+        type: text
+    meta_description:
+        label: 'offline.snipcartshop::lang.plugin.common.meta_description'
+        size: large
+        oc.commentPosition: ''
+        span: left
+        type: textarea
+    parent:
+        label: 'offline.snipcartshop::lang.plugin.category.parent'
+        type: dropdown
+        span: left

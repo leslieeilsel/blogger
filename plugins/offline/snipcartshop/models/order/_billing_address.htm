@@ -1,0 +1,12 @@
+<?php
+$values = array_filter([
+    $value['company'],
+    $value['fullName'],
+    $value['address1'],
+    $value['address2'],
+    $value['postalCode'],
+    $value['province'],
+    $value['country']
+]);
+?>
+<?= implode(', ', $values); ?>

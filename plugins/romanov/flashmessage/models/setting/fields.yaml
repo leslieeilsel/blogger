@@ -1,0 +1,127 @@
+fields:
+    title:
+        label: romanov.flashmessage::lang.settings.name
+        required: required
+tabs:
+    fields:
+        options_section:
+            label: Documentation - http://bootstrap-notify.remabledesigns.com/#documentation-options
+            type: section
+            tab: Options
+        options[icon]:
+            label: icon
+            span: left
+            tab: Options
+        options[title]:
+            label: title
+            span: right
+            tab: Options
+        options[url]:
+            label: url
+            span: left
+            tab: Options
+        options[target]:
+            label: target
+            span: right
+            tab: Options
+        options[message]:
+            label: message
+            tab: Options
+        settings_section:
+            tab: Settings
+            label: Documentation - http://bootstrap-notify.remabledesigns.com/#documentation-settings
+            type: section
+        settings[element]:
+            label: element
+            span: left
+            tab: Settings
+        settings[position]:
+            span: right
+            tab: Settings
+            label: position
+        settings[type]:
+            span: left
+            tab: Settings
+            label: type
+        settings[icon_type]:
+            tab: Settings
+            span: right
+            label: icon_type
+        settingsplacement[from]:
+            span: left
+            tab: Settings
+            label: placement.from
+        settingsplacement[align]:
+            span: right
+            tab: Settings
+            label: placement.align
+        settings[offset]:
+            tab: Settings
+            label: offset
+        settingsoffset[x]:
+            span: left
+            tab: Settings
+            label: offset.x
+        settingsoffset[y]:
+            span: right
+            tab: Settings
+            label: offset.y
+        settings[spacing]:
+            span: left
+            tab: Settings
+            label: spacing
+        settings[z_index]:
+            span: right
+            tab: Settings
+            label: z_index
+        settings[delay]:
+            span: left
+            tab: Settings
+            label: delay
+        settings[timer]:
+            span: right
+            tab: Settings
+            label: timer
+        settings[url_target]:
+            span: left
+            tab: Settings
+            label: url_target
+        settings[mouse_over]:
+            span: right
+            tab: Settings
+            label: mouse_over
+        settingsanimate[enter]:
+            span: left
+            tab: Settings
+            label: animate.enter
+        settingsanimate[exit]:
+            span: right
+            tab: Settings
+            label: animate.exit
+        settings[onShow]:
+            span: left
+            tab: Settings
+            label: onShow
+        settings[onShown]:
+            span: right
+            tab: Settings
+            label: onShown
+        settings[onClose]:
+            span: left
+            tab: Settings
+            label: onClose
+        settings[onClosed]:
+            span: right
+            tab: Settings
+            label: onClosed
+        settings[allow_dismiss]:
+            label: allow_dismiss
+            tab: Settings
+            type: switch
+            default: true
+        settings[template]:
+            tab: Settings
+            label: template
+            type: codeeditor
+            size: huge
+            language: html

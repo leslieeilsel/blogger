@@ -10,6 +10,17 @@ postPage = "blog/post"
 slug = "{{ :slug }}"
 displayEmpty = 1
 categoryPage = "blog/category"
+
+[searchInput]
+useAutoComplete = 1
+autoCompleteResultCount = 5
+showProviderBadge = 1
+
+[searchResults]
+resultsPerPage = 10
+showProviderBadge = 1
+noResultsMessage = "Your search returned no results."
+visitPageMessage = "Visit page"
 ==
 <?php
 function onStart()
@@ -23,6 +34,7 @@ function onStart()
 </div>
 
 <div class="sidebar-segment hidden-sm hidden-xs">
+    <!-- <img src="/themes/responsiv-clean/assets/images/ape.png" alt=""style="width: 77px;vertical-align:middle;width: 100%"> -->
     <h1 class="site-name">
         <a href="{{ 'home'|page }}">{{ this.theme.site_name }}</a>
     </h1>
@@ -30,6 +42,11 @@ function onStart()
         {{ this.theme.site_motto }}
     </p>
 </div>
+
+<form action="{{ 'search' | page }}" method="get">
+    <input name="q" type="text" placeholder="What are you looking for?" autocomplete="off">
+    <button type="submit">Search</button>
+</form>
 
 <div class="sidebar-segment">
     <h2 class="segment-title">最近的帖子</h2>
