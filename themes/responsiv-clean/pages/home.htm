@@ -1,23 +1,32 @@
 title = "Welcome"
 url = "/"
 layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
 
 [blogPosts]
 pageNumber = "{{ :page }}"
-postsPerPage = "10"
+postsPerPage = 10
+noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
 categoryPage = "blog/category"
 postPage = "blog/post"
 
 [resources]
-less[] = "pages/home.less"
 js[] = "controls/auto-pager.js"
 js[] = "../vendor/isotope/imagesloaded.js"
 js[] = "../vendor/isotope/isotope.js"
 js[] = "pages/home.js"
+less[] = "pages/home.less"
+
 ==
-<?
-public function onPagePosts()
+<?php
+function onPagePosts()
 {
     $this->blogPosts->setProperty('pageNumber', post('page'));
     $this->pageCycle();

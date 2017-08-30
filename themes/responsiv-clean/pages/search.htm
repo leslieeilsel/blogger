@@ -1,0 +1,47 @@
+title = "Search"
+url = "/search"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[searchResults]
+resultsPerPage = 10
+showProviderBadge = 1
+noResultsMessage = "Your search returned no results."
+visitPageMessage = "访问页面"
+==
+<h2>Search results for {{ searchResults.query }}</h2>
+{% component 'searchResults' %}
+<style>
+    .ss-result {
+        margin-bottom: 2em;
+    }
+
+    .ss-result__aside {
+        float: right;
+        margin-left: .5em;
+    }
+
+    .ss-result__title {
+        font-weight: bold;
+        margin-bottom: .5em;
+    }
+
+    .ss-result__badge {
+        font-size: .7em;
+        padding: .2em .5em;
+        border-radius: 4px;
+        margin-left: .75em;
+        background: #eee;
+        display: inline-block;
+    }
+
+    .ss-result__text {
+        margin-bottom: .5em;
+    }
+</style>
