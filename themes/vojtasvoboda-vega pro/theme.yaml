@@ -1,0 +1,14 @@
+name: 'Vega Pro'
+description: 'Vega Pro theme'
+author: 'Vojta Svoboda'
+homepage: 'http://www.vojtasvoboda.cz'
+code: Vega Pro
+require:
+    - RainLab.Blog
+    - RainLab.Pages
+    - RainLab.Translate
+    - AnandPatel.WysiwygEditors
+    - OFFLINE.SiteSearch
+    - Zainab.SimpleContact
+form: config/fields.yaml
+translate: config/lang.yaml

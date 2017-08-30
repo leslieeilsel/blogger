@@ -1,0 +1,21 @@
+title = "Blog list"
+url = "/blog/:page?"
+layout = "blog"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :category }}"
+postsPerPage = 3
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog-category"
+postPage = "blog-detail"
+==
+<div class="col-md-9 blog-feed-column">
+    {% component 'blogPosts' %}
+</div>
+
+<div class="col-md-3 sidebar">
+    {% partial 'modules/sidebar' %}
+</div>

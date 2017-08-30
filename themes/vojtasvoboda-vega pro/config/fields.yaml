@@ -1,0 +1,89 @@
+tabs:
+    fields:
+        site_title:
+            tab: General
+            label: Title
+            type: text
+            default: My new websites
+            comment: Used at site title
+        site_locale:
+            tab: General
+            label: Locale
+            type: text
+            default: en
+            comment: Used for HTML lang parameter
+        color:
+            tab: General
+            label: Color scheme
+            type: dropdown
+            default: orange
+            options:
+                orange: Orange
+                blue: Blue
+                green: Green
+        intro_fullscreen:
+            tab: General
+            label: Intro fullscreen
+            type: switch
+            default: false
+            comment: Intro image is fullscreen
+
+        header_email:
+            tab: Header
+            label: Email
+            default: info@octobercms.com
+        header_phone:
+            tab: Header
+            label: Phone
+            default: 123-123-1234
+
+        footer_address:
+            tab: Footer
+            label: Address
+            default: 1234 Main St, City, ST
+            span: left
+        footer_phone:
+            tab: Footer
+            label: Phone
+            default: +1(123) 456 7890
+            span: right
+        footer_email:
+            tab: Footer
+            label: Email
+            default: info@octobercms.com
+            span: left
+        footer_facebook:
+            tab: Footer
+            label: Facebook link
+            default: https://www.facebook.com/facebook
+            span: right
+
+        social_facebook:
+            tab: Social
+            label: Facebook link
+            default: https://www.facebook.com
+        social_twitter:
+            tab: Social
+            label: Twitter link
+            default: https://www.twitter.com
+        social_instagram:
+            tab: Social
+            label: Instagram link
+            default: https://www.instagram.com
+        social_google:
+            tab: Social
+            label: Google link
+            default: https://www.google.com
+        social_linkedin:
+            tab: Social
+            label: LinkedIn link
+            default: https://www.linkedin.com
+
+        copyright_first:
+            tab: Copyright
+            label: First line
+            default: Copyright 2016
+        copyright_second:
+            tab: Copyright
+            label: Second line
+            default: Vega Theme for <a target="_blank" href="https://www.octobercms.com">OctoberCMS</a>

@@ -1,0 +1,24 @@
+[viewBag]
+snippetCode = "intro"
+snippetName = "Intro section"
+snippetProperties[link][title] = "Button link"
+snippetProperties[link][type] = "string"
+snippetProperties[link][default] = "#features"
+snippetProperties[link][options][] = ""
+==
+<div
+    class="image-banner frontpage-banner frontpage-banner-parallax-bg{% if this.theme.intro_fullscreen %} full-screen{% endif %}"
+    data-parallax="scroll"
+    data-image-src="{{ 'assets/images/samples/vega-banner2-1-1.jpg' | theme }}"
+    id="intro">
+    <div class="container">
+        <div class="inner">
+            <h1 class="block-title wow zoomIn">{{ 'section.intro.headline' | _ }}</h1>
+            <div class="text-center hidden-xs wow zoomIn description">
+                {% content 'intro/content' %}
+                <p><a class="btn btn-primary-custom btn-margin-top" href="{{ link }}">{{ 'section.intro.button' | _ }}</a></p>
+            </div>
+        </div>
+        <div class="helper"></div>
+    </div>
+</div>

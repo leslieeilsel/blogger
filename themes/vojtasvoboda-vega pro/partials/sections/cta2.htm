@@ -1,0 +1,24 @@
+[viewBag]
+snippetCode = "cta2"
+snippetName = "Call to action #2 section"
+snippetProperties[link][title] = "Button link"
+snippetProperties[link][type] = "string"
+snippetProperties[link][default] = "#"
+snippetProperties[link][options][] = ""
+==
+<div class="shadow"></div>
+<div class="section frontpage-cta parallax-bg" data-parallax="scroll" data-image-src="{{ 'assets/images/samples/rural-enhanced-1.jpg' | theme }}" id="cta2">
+    <div class="container wow zoomIn">
+        <div class="description">
+            <p>
+                {% content 'cta2/heading' %}
+                <p>&nbsp;</p>
+                <p>
+                    <a href="{{ link }}" target="_blank" class="btn btn-primary-custom btn-margin-top"><strong>{{ 'section.cta2.button' | _ }}</strong></a>
+                </p>
+                <p>&nbsp;</p>
+                {% content 'cta2/content' %}
+            </p>
+        </div>
+    </div>
+</div>

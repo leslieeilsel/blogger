@@ -1,0 +1,63 @@
+{% set posts = __SELF__.posts %}
+
+{% for post in posts %}
+<div class="entry clearfix wow zoomIn post type-post status-publish format-standard has-post-thumbnail sticky hentry">
+
+    <!-- Post Title -->
+    <h3 class="entry-title">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+    </h3>
+
+    <!-- Small Image Left, Excerpt Right -->
+    <div class="entry-image entry-image-left">
+        <a class="post-thumbnail post-thumbnail-small" href="{{ post.url }}">
+            <img
+                src="{{ post.featured_images.first().getThumb(1200, 676, 'crop') }}"
+                class="attachment-full size-full wp-post-image"
+                alt="{{ post.title }}" />
+        </a>
+    </div>
+
+    <div class="entry-content-right">
+        {{ post.summary | raw }}
+    </div>
+    <!-- /Small Image Left, Excerpt Right -->
+
+    <!-- Post Meta -->
+    <div class="entry-meta entry-meta-right">
+        {{ 'blog.post.posted' | _ }}: {{ post.published_at|date('M d, Y') }}<br />
+        {% if post.categories.count %}
+        {{ 'blog.post.under' | _ }}:
+        {% for category in post.categories %}
+        <a href="{{ category.url }}" rel="category tag">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+        {% endfor %}
+        {% endif %}
+    </div>
+    <!-- /Post Meta -->
+</div>
+
+{% else %}
+<p class="text-center">{{ noPostsMessage }}</p>
+{% endfor %}
+
+{% if posts.lastPage > 1 %}
+<div class="posts-pagination">
+    <div class="posts-pagination-block">
+        {% if posts.currentPage > 1 %}
+        <a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}"><span class="ic ic-angle-left"></span></a>
+        {% endif %}
+
+        {# for page in 1..posts.lastPage
+        <a
+            href="{{ this.page.baseFileName|page({ (pageParam): page }) }}"
+            class="{{ posts.currentPage == page ? 'active' : null }}">
+            {{ page }}
+        </a>
+        endfor #}
+
+        {% if posts.lastPage > posts.currentPage %}
+        <a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}"><span class="ic ic-angle-right"></span></a>
+        {% endif %}
+    </div>
+</div>
+{% endif %}

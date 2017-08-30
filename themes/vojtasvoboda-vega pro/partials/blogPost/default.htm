@@ -1,0 +1,46 @@
+{% set post = __SELF__.post %}
+
+<div class="clearfix post type-post status-publish format-standard has-post-thumbnail hentry">
+
+    <!-- Post Title -->
+    <h3 class="entry-title">{{ post.title }}</h3>
+    <!-- /Post Title -->
+
+    <!-- Post Meta -->
+    <div class="entry-meta">
+        {{ 'blog.post.posted' | _ }}: {{ post.published_at | date('M d, Y') }}<span class="sep">/</span>
+        {% if post.categories.count %}
+        {{ 'blog.post.under' | _ }}:
+        {% for category in post.categories %}
+        <a href="{{ category.url }}" rel="category tag">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+        {% endfor %}
+        <span class="sep">/</span>
+        {% endif %}
+        {{ 'blog.post.by' | _ }}: {{ post.user.first_name }} {{ post.user.last_name }}
+    </div>
+    <!-- /Post Meta -->
+
+    <!-- Post Tags -->
+    <div class="entry-tags">
+        <p></p>
+    </div>
+    <!-- /Post Tags -->
+
+    {% if post.featured_images.count %}
+    <!-- Post Image -->
+    <div class="entry-image">
+        <img
+            src="{{ post.featured_images.first().getThumb(800, 533) }}"
+            class="attachment-full size-full wp-post-image"
+            alt="{{ post.title }}" />
+    </div>
+    <!-- /Post Image -->
+    {% endif %}
+
+    <!-- Post Content -->
+    <div class="entry-content">
+        {{ post.content_html | raw }}
+    </div>
+    <!-- /Post Content -->
+
+</div>

@@ -1,0 +1,23 @@
+[viewBag]
+snippetCode = "cta"
+snippetName = "Call to action #1 section"
+snippetProperties[link][title] = "Button link"
+snippetProperties[link][type] = "string"
+snippetProperties[link][default] = "http://octobercms.com/theme/vojtasvoboda-vegapro"
+snippetProperties[link][options][] = ""
+==
+<div class="shadow"></div>
+<div class="section frontpage-cta parallax-bg" data-parallax="scroll" data-image-src="{{ 'assets/images/samples/station-enhanced-2.jpg' | theme }}" id="cta">
+    <div class="container wow zoomIn description">
+        <div class="description">
+            <h2>{{ 'section.cta.heading' | _ }}</h2>
+            {% content 'cta/subheading' %}
+            <p>&nbsp;</p>
+            <p>
+                <a class="btn btn-primary-custom btn-margin-top btn-margin-bottom" href="{{ link }}">{{ 'section.cta.button' | _ }}</a>
+            </p>
+            <p>&nbsp;</p>
+            {% content 'cta/content' %}
+        </div>
+    </div>
+</div>

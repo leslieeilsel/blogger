@@ -1,0 +1,83 @@
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 3
+noPostsMessage = "No posts found."
+sortOrder = "published_at desc"
+categoryPage = "blog-category"
+postPage = "blog-detail"
+
+[viewBag]
+snippetCode = "posts"
+snippetName = "Posts section"
+==
+<div class="section frontpage-recent-posts bg-white" id="latest">
+    <div class="container">
+
+        <h2 class="block-title wow bounceIn">{{ 'section.posts.headline' | _ }}</h2>
+
+        <div class="row">
+
+            {% set posts = blogPosts.posts %}
+
+            {% for post in posts %}
+            <div class="col-md-4 col-sm-4 wow zoomIn">
+
+                <div class="post-grid recent-entry">
+                    <div class="recent-entry-image image">
+                        <a class="post-thumbnail post-thumbnail-recent" href="{{ post.url }}">
+                            <img
+                                src="{{ post.featured_images.first.getThumb(350, 220, 'crop') }}"
+                                class="img-responsive wp-post-image"
+                                alt="{{ post.title }}" />
+                        </a>
+                        <div class="caption">
+                            <div class="caption-inner">
+                                <a href="{{ post.url }}" class="icon-link white"><i class="fa fa-link"></i></a>
+                            </div>
+                            <div class="helper"></div>
+                        </div>
+                    </div>
+
+                    <!-- Post Title -->
+                    <h4 class="recent-entry-title">
+                        <a href="{{ post.url }}">{{ post.title }}</a>
+                    </h4>
+                    <!-- /Post Title -->
+
+                    <div class="recent-entry-content">
+                        {{ post.summary | raw }}
+                    </div>
+
+                    <!-- Post Meta -->
+                    <div class="recent-entry-meta">
+                        {{ 'blog.post.posted' | _ }}: {{ post.published_at | date('M d, Y') }}<br />
+                        {% if post.categories.count %}
+                        {{ 'blog.post.under' | _ }}:
+                        {% for category in post.categories %}
+                        <a href="{{ category.url }}" rel="category tag">{{ category.name }}</a>{% if not loop.last %},{% endif %}
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                    <!-- /Post Meta -->
+                </div>
+            </div>
+
+            {% else %}
+            <p class="text-center">{{ noPostsMessage }}</p>
+            {% endfor %}
+
+            {% if posts %}
+            <div class="col-md-12">
+                <p class="text-center">
+                    <a
+                        class="btn btn-primary-custom btn-margin-top"
+                        href="{{ 'blog-list' | page }}">
+                        {{ 'section.posts.more' | _ }}
+                    </a>
+                </p>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
